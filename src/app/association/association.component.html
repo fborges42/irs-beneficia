@@ -1,0 +1,46 @@
+<div class="main-container">
+  <mat-card class="card" *ngIf="associationsData">
+    <div class="ribbon"><span>aleatório</span></div>
+
+    <mat-card-header>
+      <div mat-card-avatar class="card-header-image"></div>
+      <mat-card-title>
+        {{associationsData[randomAssociationPosition].nipc}}</mat-card-title>
+      <mat-card-subtitle>
+        <p>{{ associationsData[randomAssociationPosition].name}}</p>
+        <p>{{associationsData[randomAssociationPosition].location}}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-actions class="card-action-buttons">
+      <button mat-stroked-button (click)="setRandomAssociation()">Próximo</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="nipc" class="table-column">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> NIPC </th>
+      <td mat-cell *matCellDef="let association">
+        {{association.nipc}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+      <td mat-cell *matCellDef="let association"> {{association.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Concelho </th>
+      <td mat-cell *matCellDef="let association"> {{association.location}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

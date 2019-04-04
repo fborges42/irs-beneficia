@@ -1,0 +1,23 @@
+.card-header-image {
+  background-image: url('https://cdn1.iconfinder.com/data/icons/banking-3/100/bank-33-512.png');
+  background-size: cover;
+}
+
+.card {
+  max-width: 400px;
+  margin-bottom: 16px;
+}
+
+.card-action-buttons button,
+.card-action-buttons a {
+  margin-right: 8px;
+  right: 0;
+}
+
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
