@@ -1,6 +1,11 @@
 # IrsBeneficia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.  
+This is an open project to enable tax payers in Portugal to select an institution to donate 0,5% and/or 15% of the supported VAT.
+
+## Data used
+The project is using data from an excel file (translated to JSON) from 2018.  
+Source: https://www.portaldasfinancas.gov.pt/at/html/index.html
 
 ## Development server
 
